@@ -7,7 +7,7 @@ Ministry Centered Technologies
 
 Getting set up.
 
-1. Clone this repo's `gh-pages` branch. `git clone https://github.com/ministrycentered/developers.git -b gh-pages`
+1. Clone this repo's `gh-pages` branch. `git clone https://github.com/planningcenter/developer-blog.git -b gh-pages`
 2. If you're going to work on the blog itself run `bundle install`
 3. To build the site locally `jekyll serve` or `jekyll serve --watch` to live reload your code.
 
