@@ -11,13 +11,13 @@ One of the challenges of [Music Stand][1] is rendering PDFs and user annotations
 
 At a super high level here's what happens when a user first loads a plan.
 
-1.  We fetch all PDF's for the plan.  These are straightforward [NSURLSessionDownloadTasks][2].
-2.  While those PDF's are downloading we get the user's annotation data from Planning Center.
+1.  We fetch all PDFs for the plan.  These are straightforward [NSURLSessionDownloadTasks][2].
+2.  While those PDFs are downloading we get the user's annotation data from Planning Center.
 3.  We render the first 3 pages for each PDF while the user is looking at the plan view.  If they select a PDF, all render jobs are immediately canceled and the PDF is displayed.
 4.  The PDF view is presented with the first page of the selected PDF showing.  If the full size image is cached it's displayed, if not we render the page live to the screen.
 5.  After each page is displayed the next 2 pages are loaded into memory ready to display.
 
-Each job is performed on a concurrent queue, allowing the system to take full advantage of all the CPU/GPU resources available.  Three versions of each page are generated.  A thumbnail, full resolution with annotations and full resolution with no annotations.  Each image generated has a priority.  The first page of the first PDF in the plan has a higher priority than the last PDF's first page.  And the full resolution takes priority over the thumbnail.
+Each job is performed on a concurrent queue, allowing the system to take full advantage of all the CPU/GPU resources available.  Three versions of each page are generated.  A thumbnail, full resolution with annotations and full resolution with no annotations.  Each image generated has a priority.  The first page of the first PDF in the plan has a higher priority than the last PDFs first page.  And the full resolution takes priority over the thumbnail.
 
 Pre-rendering pages allows the app to have static image ready when the user wants to view a page.  Displaying a static image is much faster then drawing it to the screen.  We can fall back and present a page live if the pre-render fails or isn't done in time.
 
