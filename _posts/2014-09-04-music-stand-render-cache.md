@@ -7,7 +7,7 @@ header: /assets/images/music-stand-icon-ios.png
 team:	mobile
 ---
 
-One of the challenges of [Music Stand][1] is rendering PDFs and users annotations in a timely fashion.  Each of those tasks alone isn't a big deal, but all together it's quite a challenge.  Let's take a look at how Music Stand renders and caches PDF pages.
+One of the challenges of [Music Stand][1] is rendering PDFs and user annotations in a timely fashion.  Each of those tasks alone isn't a big deal, but all together it's quite a challenge.  Let's take a look at how Music Stand renders and caches PDF pages.
 
 At a super high level here's what happens when a user first loads a plan.
 
