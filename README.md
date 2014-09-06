@@ -38,6 +38,33 @@ There are some optional values you can set.
 
 The post file can be found in `_posts/`.  The file name should be formatted as `<year>-<month>-<day>-<title>.md` with the title lowercased and words `-` delimited.
 
+#### Author page
+
+If you don't already have one, create a new author page for yourself.
+
+Add a new file to `_authors/<fistname>-<lastname>.md`.
+
+```yaml
+layout: author
+name: "Your Name"
+image: "full link to profile image"
+github: "github username"
+twitter: "twitter username"
+```
+
+- `name` - Your full name.  This should match the `author` attribute on posts you've written.
+
+- `image` - Full path to profile image.  
+
+    We append ``?s=200` to the end of the URL to get the size of image needed.
+
+    [Gravitar](https://en.gravatar.com/site/implement/images/) is the best for this.
+
+    You can generate a Gravatar link using `rake gravitar:link["you@example.com"]`
+
+- `github` - Your GitHub username
+
+- `twitter` - Your Twitter username
 
 ***
 

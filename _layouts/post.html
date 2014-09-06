@@ -23,4 +23,18 @@ layout: default
   <div class="body">
   {{ content }}
   </div>
+
+
+  {% for author in site.authors %}
+    {% if author.name == page.author %}
+      <div class="author-link">
+        <hr />
+        <h5>By</h5>
+        <a href="{{ author.url }}">
+          <img class="author-profile-image" src="{{ author.image }}?s=140" />
+          <p class="name">{{ author.name }}</p>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>

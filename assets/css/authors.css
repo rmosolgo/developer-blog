@@ -1,0 +1,130 @@
+/* All Authors */
+.authors
+{
+  text-align: center;
+  padding: 45px 0 0 0;
+  font-size: 0;
+}
+
+.authors .list-author
+{
+  margin: -1px 0 0 -1px;
+  width: 200px;
+  height: 200px;
+  border: solid 1px #DFDFDF;
+  padding: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+}
+
+.authors .list-author:hover
+{
+  background-color: #DFDFDF;
+}
+
+.authors .list-author img
+{
+  width: 64px;
+  height: 64px;
+}
+
+.authors .list-author a:hover
+{
+  text-decoration: none;
+}
+
+.authors a
+{
+  color: #1E1E1E;
+}
+
+/* Single Author Page */
+.author
+{
+  margin-top: 85px;
+  text-align: center;
+}
+
+.author a
+{
+  color: #C73C36;
+}
+
+.author img
+{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.author #twitter_logo
+{
+  height: 20px;
+}
+
+.author .my-posts
+{
+  margin-top: 50px;
+}
+
+.author .my-posts .a-post
+{
+  font-size: 24px;
+}
+
+.author .my-posts .a-post span
+{
+  font-size: 16px;
+}
+
+.author .links
+{
+  margin-top: 60px;
+}
+
+.author .links img
+{
+  margin: 10px;
+  max-height: 30px;
+}
+
+/* Author Link */
+.author-link
+{
+  margin: 80px;
+  text-align: center;
+}
+.author-link hr
+{
+  margin: 0 0 60px 0;
+}
+.author-link a
+{
+  color: #C73C38;
+}
+.author-link img
+{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+.author-link p
+{
+  margin: 12px 0 0 0;
+  color: #C73C38 !important;
+}
+.author-link h5
+{
+  margin: 0 0 12px 0;
+}
+
+img.author-profile-image
+{
+  border-radius: 50%;
+  border: solid 1px #CFCFCF;
+}

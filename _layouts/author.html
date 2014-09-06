@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="author">
+  <img class="pic author-profile-image" src="{{ page.image }}?s=400" />
+  <h3 class="name">{{ page.name }}</h3>
+
+  <div class="bio">{{ page.content }}</div>
+
+  <div class="my-posts">
+    {% for post in site.posts %}
+      {% if post.author == page.name %}
+        <div class="a-post">
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+          &mdash;
+          <span class="date">{{ post.date | date: "%d %b, %Y" }}</span>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="links">
+    {% if page.github %}
+      <a href="https://github.com/{{ page.github }}">
+        <img id="github_logo" src="/assets/images/GitHub_Logo.png" />
+      </a>
+    {% endif %}
+    {% if page.twitter %}
+      <a href="https://twitter.com/{{ page.twitter }}">
+        <img id="twitter_logo" src="/assets/images/Twitter_logo_blue.png" />
+      </a>
+    {% endif %}
+  </div>
+</div>

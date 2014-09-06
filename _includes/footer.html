@@ -1,12 +1,20 @@
 <div id="archive-section">
-<a class="archive-title" href="/archive.html">Explore Planning Center Developers</a>
-<ul class="teams">
-  <li><a href="/teams/devops.html">DevOps</a></li>
-  /
-  <li><a href="/teams/mobile.html">Mobile</a></li>
-  /
-  <li><a href="/teams/web.html">Web</a></li>
-</ul>
+  <div>
+    <a class="archive-title" href="/archive.html">Explore Planning Center Developers</a>
+  </div>
+  <div id="footer-authors-link-container">
+    <a href="/authors">Authors</a>
+  </div>
+  <ul class="teams">
+    {% for team in site.teams %}
+      <li>
+        <a href="{{ team.url }}">{{ team.name }}</a>
+      </li>
+      {% if forloop.rindex0 > 0 %}
+        /
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
 
 <div class="bottom-footer">
