@@ -25,11 +25,15 @@ namespace :post do
     File.open(file_path, "w") { |f| f.write(new_post) }
 
     editor = Defaults.prefs["editor"]
-
     if !editor || editor.empty?
       puts "You can set your default markdown editor by running rake prefs:editor[name]"
     else
-      `open -a #{editor} #{file_path}`
+      `open -a '#{editor}' #{file_path}`
+    end
+
+    preview = Defaults.prefs["write.preview"]
+    if preview && !preview.empty?
+      `open -a '#{preview}' #{file_path}`
     end
   end
 end
