@@ -6,8 +6,6 @@ name: "skip"
 
 <div class="authors group">
   {% for author in site.authors %}
-    {% if author.name != "skip" %}
-      {% include author_list.html %}
-    {% endif %}
+    {% include author_list.html %}
   {% endfor %}
 </div>

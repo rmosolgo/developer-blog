@@ -6,7 +6,7 @@ layout: default
   <img class="pic author-profile-image" src="{{ page.image }}?s=400" />
   <h3 class="name">{{ page.name }}</h3>
 
-  <div class="bio">{{ page.content }}</div>
+  <div class="bio">{{ page.content | markdownify }}</div>
 
   <div class="my-posts">
     {% for post in site.posts %}
