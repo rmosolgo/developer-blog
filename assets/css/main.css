@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
-
+@import url(http://fonts.googleapis.com/css?family=Lora);
 
 /* Global */
 
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: Montserrat, Helvetica, Sans-Serif;
+  font-family: 'Lora', serif;
   width: 100%;
 }
 a {
@@ -37,6 +37,7 @@ body .row
 
 .top-header
 {
+  font-family: Montserrat, Helvetica, Sans-Serif;
   height: 550px;
 }
 
@@ -123,7 +124,6 @@ body .row
 #content .posts p, #content .post p
 {
   color: #626262;
-  font-size: 1.2em;
 }
 
 .highlight
@@ -285,4 +285,9 @@ body .row
 #content .main-archive .post-title a
 {
   color: #838383;
+}
+
+/* github-markdown overrides */
+.markdown-body.post {
+  font-family: 'Lora', serif;
 }
