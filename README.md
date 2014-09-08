@@ -42,7 +42,7 @@ The post file can be found in `_posts/`.  The file name should be formatted as `
 
 If you don't already have one, create a new author page for yourself.
 
-Add a new file to `_authors/<fistname>-<lastname>.md`.
+Add a new file to `_authors/<firstname>-<lastname>.md`.
 
 ```yaml
 layout: author
@@ -58,9 +58,9 @@ twitter: "twitter username"
 
     We append ``?s=200` to the end of the URL to get the size of image needed.
 
-    [Gravitar](https://en.gravatar.com/site/implement/images/) is the best for this.
+    [Gravatar](https://en.gravatar.com/site/implement/images/) is the best for this.
 
-    You can generate a Gravatar link using `rake gravitar:link["you@example.com"]`
+    You can generate a Gravatar link using `rake gravatar:link["you@example.com"]`
 
 - `github` - Your GitHub username
 
