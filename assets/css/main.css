@@ -127,7 +127,7 @@ body .row
 }
 
 #content .post ul {
-  margin-left: 20px;
+  margin: 20px 0px 20px 20px;
 }
 #content .post li {
   margin-bottom: 5px;

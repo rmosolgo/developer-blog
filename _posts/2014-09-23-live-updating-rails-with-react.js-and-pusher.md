@@ -7,18 +7,18 @@ header: /assets/images/check-ins-logo.png
 team:   web
 ---
 
-Originally, PCO Check-Ins was a Batman.js app. When we rewrote it, Flux-inspired React.js turned out to be very conductive to our live-updating interface.
+Originally, [PCO Check-Ins][check-ins] was a Batman.js app. When we rewrote it, [Flux][flux]-inspired [React.js][react] turned out to be very conducive to rebuilding our live-updating interface.
 
-<img src="/assets/images/check-ins-dashboard.png" />
+![check-ins-dashboard](/assets/images/check-ins-dashboard.png)
 
 The process looks like this:
 
 - Relevant models have an `after_commit` hook that registers any change
-- In an `ApplicationController` `after_filter`, registered changes are emitted over Pusher
+- In an `ApplicationController` `after_action`, registered changes are emitted over [Pusher][pusher]
 - In the browser, the singleton `PusherStore` picks up the event and fires change events for each model that changed
-- Mounted React components respond to change events however they should
+- Mounted [React][react] components respond to change events however they should
 
-For this pattern, I'm indebted to previous work on PCO Resources and PCO Check-Ins. Jeff, Zack and Dan fine-tuned a system we called `Batman::Live` which performed _much more extensive_ live-updating. It tracked creates, updates and destroys and propagated these events to Batman.js on all clients.
+For this pattern, I'm indebted to previous work on [PCO Resources][resources] and [PCO Check-Ins][check-ins]. [Jeff][jeff], [Zack][zack] and [Dan][dan] fine-tuned a system we called `Batman::Live` which performed _much more extensive_ live-updating. It tracked creates, updates and destroys and propagated these events to Batman.js on all clients.
 
 # Tracking Changes on the Server
 
@@ -26,7 +26,7 @@ I implemented `ChangedModelList` with a simple API:
 
 - `.restart!`: Prepare to gather some changes
 - `.changed(record)`: Register `record` as having been changed
-- `.fire!`: Send any changes over the wire by Pusher
+- `.fire!`: Send any changes over the wire by [Pusher][pusher]
 
 ```ruby
 class ChangedModelList
@@ -117,10 +117,10 @@ Each client will receive an event & payload when records are changed. The client
 
 I made a `PusherStore` which actually did two things:
 
-- As a singleton, the class subscribed to the Pusher channel and handled events.
-- As a constructor, it was the superclass of Flux-ish stores which React components would subscribe to.
+- As a singleton, the class subscribed to the [Pusher][pusher] channel and handled events.
+- As a constructor, it was the superclass of [Flux][flux]-ish stores which [React][react] components would subscribe to.
 
-(If it bothers you that it does two things, let me know on our [careers page] :D)
+(If it bothers you that it does two things, let me know on our [careers page][careers] :D)
 
 
 ```coffeescript
@@ -178,11 +178,11 @@ and stores are initialized:
 CheckIns.Stores.Events = new CheckIns.Stores.EventsStore
 ```
 
-Now, these stores will fire change events whenver data changes on the server.
+Now, these stores will fire change events whenever data changes on the server.
 
 # Hooking up React Components
 
-To hook up the UI, I follow Flux's pattern. React components subscribe to store changes during setup:
+To hook up the UI, I follow [Flux][flux]'s pattern. [React][react] components subscribe to store changes during setup:
 
 ```coffee
 CheckIns.EventsShowAttendance = React.createComponent
@@ -203,25 +203,37 @@ CheckIns.EventsShowAttendance = React.createComponent
   # ...
 ```
 
-These React components are sprinkled into Rails templates with the [`react-rails`] helper. For (imaginary) example:
+These [React][react] components are sprinkled into Rails templates with the [`react-rails`][react-rails] helper. For (imaginary) example:
 
 ```slim
-.attendence
-  = "#{@event.name} attendence: "
-  = react_component("CheckIns.EventsShowAttendence", {event: @event.as_json})
+.attendance
+  = "#{@event.name} attendance: "
+  = react_component("CheckIns.EventsShowAttendance", {event: @event.as_json})
 ```
 
 # Wrapping Up
 
-To (re-)implement live updates on PCO Check-ins, I:
+To (re-)implement live updates on [PCO Check-ins][check-ins], I:
 
 - Created an app-wide change tracker, `ChangedModelList`
-- Hooked the tracker up to the request/response cycle with `before_filter`/`after_filter`
-- Used a Flux-ish store, `PusherStore`, get data into the UI
+- Hooked the tracker up to the request/response cycle with `before_action`/`after_action`
+- Used a [Flux][flux]-ish store, `PusherStore`, get data into the UI
+
 
 I'm happy with this solution because:
 
 - There are no enormous "God-objects"
 - The server-side code is easy to test
-- The client-side code is predictable thanks to React instead of jQuery (no selectors, yay)
-- The client-side code is visible thanks to `react_component` in the template and the obvious subscribe/unsubscribe in the component code
+- The client-side code is predictable thanks to [React][react] instead of jQuery (no selectors, yay)
+- The client-side code is visible thanks to [`react_component`][react-rails] in the template and the obvious subscribe/unsubscribe in the component code
+
+[careers]: http://get.planningcenteronline.com/careers
+[react]: http://reactjs.com
+[pusher]: http://pusher.com
+[flux]: https://facebook.github.io/flux/
+[check-ins]: http://get.planningcenteronline.com/check-ins
+[resources]: http://get.planningcenteronline.com/resources
+[jeff]: https://twitter.com/TheBerg
+[zack]: https://twitter.com/zhubert
+[dan]: https://twitter.com/danott
+[react-rails]: https://github.com/reactjs/react-rails
