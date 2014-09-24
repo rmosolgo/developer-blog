@@ -18,7 +18,7 @@ The process looks like this:
 - In the browser, the singleton `PusherStore` picks up the event and fires change events for each model that changed
 - Mounted [React][react] components respond to change events however they should
 
-For this pattern, I'm indebted to previous work on [PCO Resources][resources] and [PCO Check-Ins][check-ins]. [Jeff][jeff], [Zack][zack] and [Dan][dan] fine-tuned a system we called `Batman::Live` which performed _much more extensive_ live-updating. It tracked creates, updates and destroys and propagated these events to Batman.js on all clients.
+For this pattern, I'm indebted to [Jeff][jeff], [Zack][zack] and [Dan][dan] for their previous work on [PCO Resources][resources] and [PCO Check-Ins][check-ins]. They fine-tuned a system we called `Batman::Live` which performed _much more extensive_ live-updating. It tracked creates, updates and destroys and propagated these events to Batman.js on all clients.
 
 # Tracking Changes on the Server
 
@@ -115,10 +115,10 @@ end
 
 Each client will receive an event & payload when records are changed. The client must inform any subscribers of the changes.
 
-I made a `PusherStore` which actually did two things:
+I made a `PusherStore` which actually does two things:
 
-- As a singleton, the class subscribed to the [Pusher][pusher] channel and handled events.
-- As a constructor, it was the superclass of [Flux][flux]-ish stores which [React][react] components would subscribe to.
+- As a singleton, the class subscribes to the [Pusher][pusher] channel and handled events.
+- As a constructor, it is the superclass of [Flux][flux]-ish stores which [React][react] components may subscribe to.
 
 (If it bothers you that it does two things, let me know on our [careers page][careers] :D)
 
