@@ -68,7 +68,7 @@ No functions leaked to the global scope, and clear intent when looking at the ma
 
 ```coffee
 # buster_actions.coffee
-BusterActions = {
+BusterActions =
   driveStairCar: (event) ->
     alert("Buster is driving the stair car, mother!");
 ```
