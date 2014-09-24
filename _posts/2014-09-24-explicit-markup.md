@@ -23,9 +23,9 @@ jQuery(function(){
 });
 ```
 
-I'm not confident that this ceremony brings any clarity to the intent of this code for my teammates (including my future-self returning to this code). Also, this trivial example doesn't begin to address functionality we may want soon, such as passing arguments into `doSomething`.
+This ceremony erases the clarity of the intent of this code for my teammates (including my future-self returning to this code). Also, this trivial example doesn't begin to address functionality we may want soon, such as passing arguments into `doSomething`.
 
-My best guess is that this mantra of _bad practice_ emerged from the evangelism of [unobtrusive javascript][] and [progressive enhancement][]. While I agree with the end-goals of these strategies, tossing out the explicitness of declaring the unobtrusive-behavior in markup seems like an unnecessary and obfuscating side-effect.
+The mantra of behavior in markup as _bad practice_ emerged from the evangelism of [unobtrusive javascript][] and [progressive enhancement][]. While I agree with the end-goals of these strategies, tossing out the explicitness of declaring the unobtrusive-behavior in markup seems like an unnecessary and obfuscating side-effect.
 
 Another objection is "you're polluting the global scope with all those functions!" Fair enough, that is a valid concern.
 
