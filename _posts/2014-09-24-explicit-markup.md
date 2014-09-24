@@ -23,7 +23,7 @@ jQuery(function(){
 });
 ```
 
-This ceremony erases the clarity of the intent of this code for my teammates (including my future-self returning to this code). Also, this trivial example doesn't begin to address functionality we may want soon, such as passing arguments into `doSomething`.
+This _best practice_ ceremony erases the clarity of this code for my teammates (including my future-self). Also, this trivial example doesn't begin to address functionality we may want soon, such as passing arguments into `doSomething`.
 
 The mantra of behavior in markup as _bad practice_ emerged from the evangelism of [unobtrusive javascript][] and [progressive enhancement][]. While I agree with the end-goals of these strategies, tossing out the explicitness of declaring the unobtrusive-behavior in markup seems like an unnecessary and obfuscating side-effect.
 
