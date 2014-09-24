@@ -120,10 +120,17 @@ body .row
   margin: 40px auto;
 }
 
-#content .posts p, #content .post p
+#content .posts p, #content .post p, #content .post ul
 {
   color: #626262;
   font-size: 1.2em;
+}
+
+#content .post ul {
+  margin: 20px 0px 20px 20px;
+}
+#content .post li {
+  margin-bottom: 5px;
 }
 
 .highlight
