@@ -120,7 +120,7 @@ body .row
   margin: 40px auto;
 }
 
-#content .posts p, #content .post p, #content .post ul
+#content .posts p, #content .post p, #content .post ul, #content .post table
 {
   color: #626262;
   font-size: 1.2em;
@@ -131,6 +131,28 @@ body .row
 }
 #content .post li {
   margin-bottom: 5px;
+}
+
+#content .post table {
+  margin: 40px 0px;
+}
+
+#content .post table {
+  margin: 40px 0px;
+}
+
+#content .post table thead {
+  border-bottom: 2px solid #aeaeae;
+  font-size: 18px;
+}
+
+#content .post table tbody tr {
+  font-size: 14px;
+  border-bottom: 1px solid #aeaeae;
+}
+
+#content .post table td, #content .post table th {
+  padding: 10px;
 }
 
 .highlight

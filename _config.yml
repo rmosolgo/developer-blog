@@ -1,5 +1,7 @@
 name: Planning Center Developers
 markdown: redcarpet
+redcarpet:
+  extensions: ["tables"]
 highlighter: "pygments"
 exclude: ["Rakefile","README.md","helpers.rb","tasks"]
 timezone: "America/Los_Angeles"
